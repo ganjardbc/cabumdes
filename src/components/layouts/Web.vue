@@ -44,8 +44,9 @@ import AppText from "../modules/AppText"
 const navbar = [
     {label: 'PROFIL', link: 'Home'},
     {label: 'PENDIDIKAN', link: 'Home'},
-    {label: 'VISI-MISI', link: 'Home'},
+    {label: 'VISI & MISI', link: 'Home'},
     {label: 'GALERI', link: 'Home'},
+    {label: 'KONTAK', link: 'Home'},
 ]
 
 export default {

@@ -1,6 +1,14 @@
 <template>
     <div class="main-screen">
-        <carousel :per-page="1" :mouse-drag="true" :autoplay="true" :autoplayTimeout="5000" :loop="true">
+        <carousel 
+            :per-page="1" 
+            :mouse-drag="true" 
+            :autoplay="true" 
+            :autoplayTimeout="5000" 
+            :loop="true" 
+            :paginationColor="'#ccc'" 
+            :paginationActiveColor="'#ec6408'" 
+            :paginationSize="13">
             <slide>
                 <!-- profil -->
                 <div class="banner">
@@ -15,7 +23,7 @@
                         <div class="right column">
                             <div></div>
                             <div>
-                                <AppText type="title">Lorem ipsum</AppText>
+                                <AppText type="title">Profil</AppText>
                                 <AppText type="title">Amet consectetur elit</AppText>
                                 <div class="bottom-line"></div>
                                 <AppText style="width: 100%; margin-bottom: 40px;">
@@ -50,7 +58,7 @@
                         <div class="right column">
                             <div></div>
                             <div>
-                                <AppText type="subtitle">Lorem ipsum</AppText>
+                                <AppText type="subtitle">Pendidikan</AppText>
                                 <!-- <div class="bottom-line"></div> -->
                                 <AppText style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -77,8 +85,11 @@
                         <div class="right column">
                             <div></div>
                             <div>
-                                <AppText type="title">Lorem ipsum</AppText>
+                                <AppText type="title">Visi & Misi</AppText>
                                 <div class="bottom-line"></div>
+                                <AppText type="subtitle" style="width: 100%; margin-bottom: 20px; font-style: italic;">
+                                    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae. Dolorum tempore nam temporibus!"
+                                </AppText>
                                 <AppText type="subtitle" style="width: 100%; margin-bottom: 0; font-style: italic;">
                                     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae. Dolorum tempore nam temporibus!"
                                 </AppText>
@@ -89,8 +100,7 @@
                 </div>
             </slide>
 
-            <slide>
-                <!-- misi -->
+            <!-- <slide>
                 <div class="banner">
                     <div class="banner-container flex">
                         <div class="left column">
@@ -116,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-            </slide>
+            </slide> -->
 
             <slide>
                 <!-- galery -->
@@ -133,29 +143,68 @@
                             <div></div>
                             <div>
                                 <div class="content-center">
-                                    <AppText type="title">Lorem ipsum</AppText>
+                                    <AppText type="title">Galeri</AppText>
                                     <div class="bottom-line" style="margin: auto; margin-top: 30px; margin-bottom: 30px;"></div>
                                 </div>
                                 <div class="display-flex margin margin-bottom-15">
-                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                    <div class="card-circle-gallery box-shadow">
                                         <img :src="icon" alt="icon" style="position: relative; width: 100%;">
                                     </div>
-                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                    <div class="card-circle-gallery box-shadow">
                                         <img :src="icon" alt="icon" style="position: relative; width: 100%;">
                                     </div>
-                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                    <div class="card-circle-gallery box-shadow">
                                         <img :src="icon" alt="icon" style="position: relative; width: 100%;">
                                     </div>
                                 </div>
                                 <div class="display-flex">
-                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                    <div class="card-circle-gallery box-shadow">
                                         <img :src="icon" alt="icon" style="position: relative; width: 100%;">
                                     </div>
-                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                    <div class="card-circle-gallery box-shadow">
                                         <img :src="icon" alt="icon" style="position: relative; width: 100%;">
                                     </div>
-                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                    <div class="card-circle-gallery box-shadow">
                                         <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </slide>
+
+            <slide>
+                <!-- kontak -->
+                <div class="banner">
+                    <div class="banner-container flex">
+                        <!-- <div class="left column">
+                            <div></div>
+                            <div class="box-shadow" style="width: 300px; height: 300px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
+                                <img :src="icon" alt="SAJI-IN" style="position: relative; width: 100%;">
+                            </div>
+                            <div></div>
+                        </div> -->
+                        <div class="right column" style="margin: auto;">
+                            <div></div>
+                            <div>
+                                <div class="content-center">
+                                    <AppText type="title">Kontak</AppText>
+                                    <div class="bottom-line" style="margin: auto; margin-top: 30px; margin-bottom: 30px;"></div>
+                                </div>
+                                <div class="display-flex margin margin-bottom-15">
+                                    <div class="card-circle-social box-shadow content-center">
+                                        <i class="fab fa-2x fa-facebook" />
+                                    </div>
+                                    <div class="card-circle-social box-shadow content-center">
+                                        <i class="fab fa-2x fa-instagram" />
+                                    </div>
+                                    <div class="card-circle-social box-shadow content-center">
+                                        <i class="fab fa-2x fa-whatsapp" />
+                                    </div>
+                                    <div class="card-circle-social box-shadow content-center">
+                                        <i class="fa fa-2x fa-envelope" />
                                     </div>
                                 </div>
                             </div>
@@ -247,3 +296,26 @@ export default {
     }
 }
 </script>
+
+<style lang="css" scoped>
+.card-circle-social {
+    position: relative;
+    width: 100px; 
+    height: 100px; 
+    line-height: 110px; 
+    border-radius: 100%; 
+    background-color: #fff; 
+    margin: auto; 
+    overflow: hidden;
+}
+.card-circle-gallery {
+    position: relative;
+    width: 140px; 
+    height: 140px; 
+    margin: auto;
+    border-radius: 10px; 
+    background-color: #f0f0f0; 
+    margin: auto; 
+    overflow: hidden;
+}
+</style>
