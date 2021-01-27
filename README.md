@@ -1,6 +1,5 @@
-# saji-in
-
-> A place for booking foods in restaurant
+# cabumdes
+> Calon Bumdes
 
 ## Build Setup
 
