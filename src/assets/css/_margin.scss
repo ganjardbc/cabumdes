@@ -1,0 +1,22 @@
+.margin {
+    @for $var from 0 to 1000 {
+        &.margin-top-#{$var} {
+            margin-top: #{$var} + 'px';
+        }
+    }
+    @for $var from 0 to 1000 {
+        &.margin-bottom-#{$var} {
+            margin-bottom: #{$var} + 'px';
+        }
+    }
+    @for $var from 0 to 1000 {
+        &.margin-left-#{$var} {
+            margin-left: #{$var} + 'px';
+        }
+    }
+    @for $var from 0 to 1000 {
+        &.margin-right-#{$var} {
+            margin-right: #{$var} + 'px';
+        }
+    }
+}

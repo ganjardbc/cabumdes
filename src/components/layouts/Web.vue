@@ -1,204 +1,51 @@
 <template>
     <div id="app">
         <div id="header">
-            <AppWrapper id="header-container">
-                <AppWrapper type="center">
-                    <div style="width: 155px; margin-right: -20px;">
-                        <router-link :to="{name: 'Home'}" style="position: relative; width: 100%; top: -7.5px; left: -15px;">
+            <div id="header-container" class="display-flex space-between">
+                <div class="display-flex">
+                    <div style="width: 45px; margin-top: 0; margin-right: 10px;">
+                        <router-link :to="{name: 'Home'}" style="position: relative; width: 100%; top: 0; left: 0;">
                             <img :src="logo" alt="SAJI-IN" style="width: 100%;">
                         </router-link>
                     </div>
-                    <div style="margin-top: 2px;">
+                    <div style="margin-top: 3px;">
                         <AppMenu :data="navbar" />
                     </div>
-                </AppWrapper>
-                <div style="margin-top: 11px;">
-                    <AppButton 
-                        title="How it works"
-                        type="link"
-                        routeName="Home"
-                    />
-                    <AppButton 
-                        title="Login"
-                        type="sekunder"
-                        routeName="Login"
-                    />
-                    <AppButton 
-                        title="Register"
-                        type="main"
-                        routeName="Register"
-                    />
                 </div>
-            </AppWrapper>
+                <div class="display-flex margin margin-top-2">
+                    <button class="btn btn-icon btn-radius btn-sekunder margin margin-left-5">
+                        <i class="fab fa-lg fa-facebook" />
+                    </button>
+                    <button class="btn btn-icon btn-radius btn-sekunder margin margin-left-5">
+                        <i class="fab fa-lg fa-instagram" />
+                    </button>
+                    <button class="btn btn-icon btn-radius btn-sekunder margin margin-left-5">
+                        <i class="fab fa-lg fa-whatsapp" />
+                    </button>
+                    <button class="btn btn-icon btn-radius btn-sekunder margin margin-left-5">
+                        <i class="fa fa-lg fa-envelope" />
+                    </button>
+                </div>
+            </div>
         </div>
         <div id="body">
             <router-view />
-        </div>
-        <div id="footer">
-            <AppWrapper id="footer-content">
-                <AppWrapper :isColumn="true" style="width: 240px;">
-                    <img 
-                        :src="logo" 
-                        alt="SAJI-IN" 
-                        style="
-                            position: relative; 
-                            width: 150px;
-                            margin-bottom: 20px;
-                        ">
-                    <AppText type="normal" style="margin-bottom: 20px;">
-                        <span style="font-size: 11pt;">Photographs are away of preserving a moment in our lives for the rest of our lives.</span>
-                    </AppText>
-                    <AppText style="margin-bottom: 20px;">
-                        <span style="font-size: 10pt;">Saji-in All Right Reserved @2020</span>
-                    </AppText>
-                </AppWrapper>
-                <AppWrapper :type="'start'" :isColumn="true">
-                    <div>
-                        <AppText style="margin-bottom: 15px;">
-                            <b>Products</b>
-                        </AppText>
-                        <ul class="menu-list">
-                            <li>
-                                <a href="#">
-                                    Catalog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Payment
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Delivery
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Support
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </AppWrapper>
-                <AppWrapper :type="'start'" :isColumn="true">
-                    <div>
-                        <AppText style="margin-bottom: 15px;">
-                            <b>About</b>
-                        </AppText>
-                        <ul class="menu-list">
-                            <li>
-                                <a href="#">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Team
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Principles
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    History
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Awwards
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </AppWrapper>
-                <AppWrapper :type="'start'" :isColumn="true">
-                    <div>
-                        <AppText style="margin-bottom: 15px;">
-                            <b>Blog</b>
-                        </AppText>
-                        <ul class="menu-list">
-                            <li>
-                                <a href="#">
-                                    News
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Events
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Support
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </AppWrapper>
-                <AppWrapper :isColumn="true" style="width: 150px;">
-                    <div style="
-                        positiion: relative;
-                        width: 120px;
-                        height: 50px;
-                        background-color: #ccc;
-                        border-radius: 5px;
-                        margin-bottom: 15px;
-                    "></div>
-                    <div style="
-                        positiion: relative;
-                        width: 120px;
-                        height: 50px;
-                        background-color: #ccc;
-                        border-radius: 5px;
-                        margin-bottom: 15px;
-                    "></div>
-                    <AppWrapper>
-                        <div style="
-                            positiion: relative;
-                            width: 40px;
-                            height: 40px;
-                            background-color: #ccc;
-                            border-radius: 100px;
-                            margin-bottom: 10px;
-                        "></div>
-                        <div style="
-                            positiion: relative;
-                            width: 40px;
-                            height: 40px;
-                            background-color: #ccc;
-                            border-radius: 100px;
-                            margin-bottom: 10px;
-                        "></div>
-                        <div style="
-                            positiion: relative;
-                            width: 40px;
-                            height: 40px;
-                            background-color: #ccc;
-                            border-radius: 100px;
-                            margin-bottom: 10px;
-                        "></div>
-                    </AppWrapper>
-                </AppWrapper>
-            </AppWrapper>
         </div>
     </div>
 </template>
 
 <script>
-import logo from '../../assets/img/logo.png'
+import logo from '../../assets/img/icon.png'
 import AppWrapper from '../modules/AppWrapper'
 import AppButton from '../modules/AppButton'
 import AppMenu from "../modules/AppMenu"
 import AppText from "../modules/AppText"
 
 const navbar = [
-    {label: 'Premium Features', link: 'premium'},
-    {label: 'Blogs', link: 'blogs'},
-    {label: 'Language', link: 'language'},
+    {label: 'PROFIL', link: 'Home'},
+    {label: 'PENDIDIKAN', link: 'Home'},
+    {label: 'VISI-MISI', link: 'Home'},
+    {label: 'GALERI', link: 'Home'},
 ]
 
 export default {

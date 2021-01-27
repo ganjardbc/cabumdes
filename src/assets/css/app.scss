@@ -1,4 +1,5 @@
 @import "_variable";
+@import "_margin";
 @import "_wrapper";
 @import "_button";
 @import "_field";
@@ -24,6 +25,10 @@ a {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
     #header {
         position: fixed;
         top: 0;
@@ -31,7 +36,7 @@ a {
         width: 100%;
         height: 70px;
         background-color: #fff;
-        box-shadow: $shadow;
+        // box-shadow: $shadow;
         z-index: 100;
         #header-container {
             width: $max-width;
@@ -45,7 +50,7 @@ a {
         line-height: 1.5;
     }
     #body {
-        margin-top: 60px;
+        margin-top: 70px;
     }
     #footer {
         position: relative;
@@ -122,8 +127,16 @@ a {
 
     // conent
     .main-screen {
+        width: 100%;
+        margin: auto;
+    }
+    .main-slider {
         width: $max-width;
         margin: auto;
+        display: flex;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        overflow-x: unset;
     }
     .container {
         width: $min-width;
@@ -146,10 +159,31 @@ a {
     .banner {
         position: relative;
         width: 100%;
-        background-color: #fff;
         .banner-container {
+            position: relative;
             width: $max-width;
+            height: calc(100vh - 150px);
             margin: auto;
+            &.flex {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .column {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .left {
+                width: 40%;
+                height: calc(100vh - 150px);
+                // background-color: #ccc;
+            }
+            .right {
+                width: 60%;
+                height: calc(100vh - 150px);
+                // background-color: #000;
+            }
         }
     }
 

@@ -1,156 +1,172 @@
 <template>
     <div class="main-screen">
-        <div class="banner">
-            <AppWrapper class="banner-container">
-                <AppWrapper :isColumn="true" type="center" style="width: 100%; height: 500px;">
-                    <div>
-                        <AppText type="title">Book a food is</AppText>
-                        <AppText type="title">Easier then before</AppText>
-                        <div class="bottom-line"></div>
-                        <AppText style="width: 80%; margin-bottom: 40px;">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae. Dolorum tempore nam temporibus!
-                        </AppText>
-                        <AppButton 
-                            title="Try it for free"
-                            type="main"
-                            style="margin-left: 0; margin-right: 5px;"
-                            routeName="Login"
-                        />
-                        <AppButton 
-                            title="Learn more"
-                            type="sekunder"
-                            :onPress="onRegister"
-                        />
-                    </div>
-                </AppWrapper>
-                <div style="background-color: #fff; width: 120%; height: 500px; text-align: right;">
-                    <img :src="icon" alt="SAJI-IN" style="position: relative; width: 80%; margin: auto; margin-top: 10px;">
-                </div>
-            </AppWrapper>
-        </div>
-
-        <AppWrapper :isColumn="true" type="center" class="self-padding">
-            <div class="space space-center">
-                <AppText type="subtitle">How it works</AppText>
-                <AppWrapper type="center">
-                    <div class="bottom-line" style="margin-top: 15px; margin-bottom: 15px;"></div>
-                </AppWrapper>
-                <AppText>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae.
-                </AppText>
-            </div>
-            <AppCardGrid :data="features" />
-        </AppWrapper>
-
-        
-        <AppWrapper type="space" class="self-padding">
-            <AppWrapper :isColumn="true" type="center" style="width: 100%; height: 300px;">
-                <div style="width: 80%;">
-                    <div class="box-shadow border-radius" style="background-color: #ccc; width: 100%; height: 250px; text-align: left;">
-                        <!-- <img :src="'/'" style="position: relative; width: 100%; margin: auto;"> -->
-                    </div>
-                </div>
-            </AppWrapper>
-            <AppWrapper :isColumn="true" type="center" style="width: 100%; height: 300px;">
-                <div style="width: 80%;">
-                    <AppText type="subtitle">Realtime book balance check</AppText>
-                    <div class="bottom-line" style="margin-top: 15px; margin-bottom: 15px;"></div>
-                    <AppText>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    </AppText>
-                    <div style="margin-top: 30px;">
-                        <AppButton
-                            routeName="Register" 
-                            style="margin: 0;"
-                            title="Register your restaurant now !"
-                            type="sekunder"
-                        />
-                    </div>
-                </div>
-            </AppWrapper>
-        </AppWrapper>
-
-        <AppWrapper :isColumn="true" type="center" class="self-padding">
-            <div class="space space-center">
-                <AppText type="subtitle">Get benefit choosing saji-in</AppText>
-                <AppWrapper type="center">
-                    <div class="bottom-line" style="margin-top: 15px; margin-bottom: 15px;"></div>
-                </AppWrapper>
-                <AppText>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae.
-                </AppText>
-            </div>
-            <AppCardList :data="benefit" />
-            <AppCardList :data="benefit2" />
-        </AppWrapper>
-
-        <AppWrapper :isColumn="true" type="center" class="self-padding">
-            <div class="space space-center">
-                <AppText type="subtitle">Providing our service throughout the country</AppText>
-                <AppWrapper type="center">
-                    <div class="bottom-line" style="margin-top: 15px; margin-bottom: 15px;"></div>
-                </AppWrapper>
-                <AppText>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae.
-                </AppText>
-            </div>
-            <div class="box-shadow border-radius" style="width: 100%; height: 350px; background-color: #ccc; margin-bottom: 20px;"></div>
-            <div class="space space-center">
-                <AppWrapper>
-                    <AppWrapper :isColumn="true" class="content-center">
-                        <AppText type="title">150+</AppText>
-                        <AppText style="margin-top: 10px;">Restaurans</AppText>
-                    </AppWrapper>
-                    <AppWrapper :isColumn="true" class="content-center">
-                        <AppText type="title">3440+</AppText>
-                        <AppText style="margin-top: 10px;">Orders</AppText>
-                    </AppWrapper>
-                </AppWrapper>
-                <AppText type="normal" style="margin-top: 30px;">We're currently working to transfer and exchange money to the people</AppText>
-                <div style="margin-top: 30px;">
-                    <AppButton
-                        routeName="Register" 
-                        style="margin: 0;"
-                        title="Register your restaurant now !"
-                        type="sekunder"
-                    />
-                </div>
-            </div>
-        </AppWrapper>
-
-        <!-- <AppWrapper type="space" class="self-padding">
-            <AppWrapper :isColumn="true" style="width: 350px; margin-top: 30px;">
-                <div style="width: 80%;">
-                    <AppText type="subtitle">People are</AppText>
-                    <AppText type="subtitle">Saying</AppText>
-                    <AppText type="subtitle">About us</AppText>
-                    <div class="bottom-line" style="margin-top: 15px; margin-bottom: 15px;"></div>
-                    <AppText>
-                        Lorem ipsum dolor sit !
-                    </AppText>
-                    <AppButton 
-                        style="margin-top: 30px;"
-                        title="See all"
-                        type="sekunder"
-                        :onPress="onRegister"
-                    />
-                </div>
-            </AppWrapper>
-            <AppWrapper :isColumn="true" type="center" style="width: 100%; height: 400px;">
-                <AppWrapper>
-                    <div style="width: 100%; margin: 0 15px;">
-                        <div class="box-shadow border-radius" style="background-color: #ccc; width: 100%; height: 350px;">
-                            <img :src="'/'" style="position: relative; width: 100%; margin: auto;">
+        <carousel :per-page="1" :mouse-drag="true" :autoplay="true" :autoplayTimeout="5000" :loop="true">
+            <slide>
+                <!-- profil -->
+                <div class="banner">
+                    <div class="banner-container flex">
+                        <div class="left column">
+                            <div></div>
+                            <div class="box-shadow" style="width: 300px; height: 300px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
+                                <img :src="icon" alt="SAJI-IN" style="position: relative; width: 100%;">
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="right column">
+                            <div></div>
+                            <div>
+                                <AppText type="title">Lorem ipsum</AppText>
+                                <AppText type="title">Amet consectetur elit</AppText>
+                                <div class="bottom-line"></div>
+                                <AppText style="width: 100%; margin-bottom: 40px;">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae. Dolorum tempore nam temporibus!
+                                </AppText>
+                                <div class="display-flex">
+                                    <button class="btn btn-main btn-radius margin margin-right-5">
+                                        <i class="fa fa-lw fa-bullhorn margin margin-top-2 margin-right-10" /> BERI DUKUNGAN
+                                    </button>
+                                    <button class="btn btn-sekunder btn-radius margin margin-right-5">
+                                        <i class="fa fa-lw fa-play margin margin-top-2 margin-right-10" /> VIDEO PROFIL
+                                    </button>
+                                </div>
+                            </div>
+                            <div></div>
                         </div>
                     </div>
-                    <div style="width: 100%; margin: 0 15px;">
-                        <div class="box-shadow border-radius" style="background-color: #ccc; width: 100%; height: 350px;">
-                            <img :src="'/'" style="position: relative; width: 100%; margin: auto;">
+                </div>
+            </slide>
+
+            <slide>
+                <!-- slogan -->
+                <div class="banner">
+                    <div class="banner-container flex">
+                        <div class="left column">
+                            <div></div>
+                            <div class="box-shadow" style="width: 300px; height: 300px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
+                                <img :src="icon" alt="SAJI-IN" style="position: relative; width: 100%;">
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="right column">
+                            <div></div>
+                            <div>
+                                <AppText type="subtitle">Lorem ipsum</AppText>
+                                <!-- <div class="bottom-line"></div> -->
+                                <AppText style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                </AppText>
+                                <AppCardList :data="benefit" />
+                            </div>
+                            <div></div>
                         </div>
                     </div>
-                </AppWrapper>
-            </AppWrapper>
-        </AppWrapper> -->
+                </div>
+            </slide>
+
+            <slide>
+                <!-- visi -->
+                <div class="banner">
+                    <div class="banner-container flex">
+                        <div class="left column">
+                            <div></div>
+                            <div class="box-shadow" style="width: 300px; height: 300px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
+                                <img :src="icon" alt="SAJI-IN" style="position: relative; width: 100%;">
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="right column">
+                            <div></div>
+                            <div>
+                                <AppText type="title">Lorem ipsum</AppText>
+                                <div class="bottom-line"></div>
+                                <AppText type="subtitle" style="width: 100%; margin-bottom: 0; font-style: italic;">
+                                    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae. Dolorum tempore nam temporibus!"
+                                </AppText>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </slide>
+
+            <slide>
+                <!-- misi -->
+                <div class="banner">
+                    <div class="banner-container flex">
+                        <div class="left column">
+                            <div></div>
+                            <div class="box-shadow" style="width: 300px; height: 300px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
+                                <img :src="icon" alt="SAJI-IN" style="position: relative; width: 100%;">
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="right column">
+                            <div></div>
+                            <div>
+                                <AppText type="title">Lorem ipsum</AppText>
+                                <div class="bottom-line"></div>
+                                <AppText type="bold" style="width: 100%; margin-bottom: 20px; font-style: italic;">
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                </AppText>
+                                <AppText type="bold" style="width: 100%; margin-bottom: 0; font-style: italic;">
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                </AppText>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </slide>
+
+            <slide>
+                <!-- galery -->
+                <div class="banner">
+                    <div class="banner-container flex">
+                        <div class="left column">
+                            <div></div>
+                            <div class="box-shadow" style="width: 300px; height: 300px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
+                                <img :src="icon" alt="SAJI-IN" style="position: relative; width: 100%;">
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="right column">
+                            <div></div>
+                            <div>
+                                <div class="content-center">
+                                    <AppText type="title">Lorem ipsum</AppText>
+                                    <div class="bottom-line" style="margin: auto; margin-top: 30px; margin-bottom: 30px;"></div>
+                                </div>
+                                <div class="display-flex margin margin-bottom-15">
+                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                        <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                        <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                        <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                </div>
+                                <div class="display-flex">
+                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                        <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                        <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                    <div class="box-shadow" style="width: 140px; height: 140px; border-radius: 100%; background-color: #f5f5f5; margin: auto; overflow: hidden;">
+                                        <img :src="icon" alt="icon" style="position: relative; width: 100%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </slide>
+
+        </carousel>
+
     </div>
 </template>
 
@@ -161,6 +177,7 @@ import AppButton from '@/components/modules/AppButton'
 import AppText from '@/components/modules/AppText'
 import AppCardGrid from '@/components/modules/AppCardGrid'
 import AppCardList from '@/components/modules/AppCardList'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
     components: {
@@ -168,7 +185,9 @@ export default {
         AppCardGrid,
         AppWrapper,
         AppButton,
-        AppText
+        AppText,
+        Carousel,
+        Slide
     },
     methods: {
         onRegister () {
@@ -178,6 +197,11 @@ export default {
     data () {
         return {
             icon: icon,
+            data: [
+                '<div class="example-slide">Slide 1</div>',
+                '<div class="example-slide">Slide 2</div>',
+                '<div class="example-slide">Slide 3</div>',
+            ],
             features: [
                 {
                     id: 1,
@@ -198,24 +222,24 @@ export default {
             benefit: [
                 {
                     id: 1,
-                    title: 'Bank deposit',
+                    title: 'Lorem ipsum',
                     description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae!'
                 },
                 {
                     id: 2,
-                    title: 'Mobile recharge',
+                    title: 'Lorem ipsum',
+                    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae!'
+                },
+                {
+                    id: 3,
+                    title: 'Lorem ipsum',
                     description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae!'
                 }
             ],
             benefit2: [
                 {
-                    id: 3,
-                    title: 'Fast transfer',
-                    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae!'
-                },
-                {
                     id: 4,
-                    title: 'Easy to send money',
+                    title: 'Lorem ipsum',
                     description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi labore dolores dolorem beatae!'
                 }
             ]
@@ -223,10 +247,3 @@ export default {
     }
 }
 </script>
-
-<style lang="css" scoped>
-.self-padding {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-</style>

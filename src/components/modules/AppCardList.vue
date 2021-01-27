@@ -1,5 +1,5 @@
 <template>
-    <AppWrapper id="AppCardList">
+    <div id="AppCardList">
         <AppWrapper v-for="(dt, index) in datas" :key="index" class="card">
             <div style="width: 120px;">
                 <div class="box-shadow" style="width: 60px; height: 60px; border-radius: 100%; background-color: #f5f5f5; overflow: hidden;">
@@ -7,13 +7,13 @@
                 </div>
             </div>
             <AppWrapper :isColumn="true" type="left" style="width: 100%;">
-                <div style="width: 90%; padding-top: 20px;">
+                <div style="width: 100%; padding-top: 10px;">
                     <AppText type="bold">{{ dt.title }}</AppText>
                     <AppText style="margin-top: 5px;">{{ dt.description }}</AppText>
                 </div>
             </AppWrapper>
         </AppWrapper>
-    </AppWrapper>
+    </div>
 </template>
 
 <script>
